@@ -27,7 +27,7 @@ soReal is a web application designed for a restaurant, allowing users to browse,
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/Mzati1/.git
+    git clone https://github.com/Mzati1/GROUP4-SYAD-ASSIGNMENT.git
     cd soreal
     ```
 
