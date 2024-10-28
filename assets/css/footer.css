@@ -1,0 +1,89 @@
+:root {
+    --footer-bg-color: #333;
+    --footer-text-color: white;
+    --footer-title-color: #d23f31;
+    --icon-color: white;
+    --icon-hover-color: #d23f31;
+    --link-hover-decoration: underline;
+    --footer-padding: 20px;
+    --footer-margin: 10px;
+    --icon-size: 24px;
+}
+
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: var(--footer-padding) 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-info,
+.footer-social {
+    flex: 1;
+    margin: var(--footer-margin);
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--footer-title-color);
+}
+
+.footer-info a,
+.footer-social a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-info a:hover,
+.footer-social a:hover {
+    color: var(--footer-title-color);
+    text-decoration: var(--link-hover-decoration);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    font-size: var(--icon-size);
+    color: var(--icon-color);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: var(--icon-hover-color);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding: 10px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,191 @@
+/* CSS Variables for easy customization */
+:root {
+    --navbar-width: 85%;
+    --navbar-bg-color: rgba(255, 255, 255, 0.3);
+    --navbar-text-color: #000;
+    --navbar-border-radius: 20px;
+    --navbar-blur: 10px;
+    --navbar-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --font-size: 1.1rem;
+    --hover-bg-color: rgba(0, 0, 0, 0.1);
+    --search-bar-width: 200px;
+    --search-bar-expanded-width: 250px;
+    --icon-size: 1.5rem;
+    --cart-count-bg: #d23f31;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: var(--navbar-width);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(var(--navbar-blur));
+    background: var(--navbar-bg-color);
+    box-shadow: var(--navbar-shadow);
+    z-index: 100;
+    border-radius: var(--navbar-border-radius);
+    margin: 0 auto;
+}
+
+/* Container to center content */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and Brand */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-size: var(--font-size);
+    color: var(--navbar-text-color);
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    font-size: var(--font-size);
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: var(--hover-bg-color);
+}
+
+/* Right section containing the search, cart, and profile */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--navbar-text-color);
+    width: var(--search-bar-width);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    width: var(--search-bar-expanded-width);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-bar i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--navbar-text-color);
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon i {
+    font-size: var(--icon-size);
+    color: var(--navbar-text-color);
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--cart-count-bg);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* Profile Icon with placeholder image */
+.profile-icon .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: var(--icon-size);
+    color: var(--navbar-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--navbar-bg-color);
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        z-index: 10;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .search-bar input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-bar input {
+        width: 120px;
+    }
+}

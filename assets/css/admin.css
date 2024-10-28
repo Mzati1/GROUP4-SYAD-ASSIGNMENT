@@ -1,0 +1,448 @@
+/* Root variables for theme customization */
+:root {
+    --bg-color: #17181d;
+    --sidebar-bg-color: #282a36;
+    --primary-color: #6272a4;
+    --text-color: #f8f8f2;
+    --secondary-text-color: #bd93f9;
+    --hover-color: #44475a;
+    --transition-duration: 0.3s;
+    --glass-bg: rgba(169, 168, 166, 0.192);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+}
+
+/* Loader */a
+.loader-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid var(--hover-color);
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: left;
+    transition: background-color var(--transition-duration) ease;
+    font-size: 1em;
+}
+
+.nav-item:hover {
+    background-color: var(--hover-color);
+}
+
+/* Profile Section */
+.profile {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    border-top: 1px solid var(--hover-color);
+    gap: 15px;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex-grow: 1;
+    color: var(--text-color);
+}
+
+.profile-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+/* Logout Icon */
+.logout-icon {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color var(--transition-duration), background-color var(--transition-duration);
+    cursor: pointer;
+}
+
+.logout-icon:hover {
+    color: var(--secondary-text-color);
+    background-color: var(--hover-color);
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--bg-color);
+    overflow-y: auto;
+}
+
+/* Title Styles */
+.home-title,
+.users-title,
+#ads h1,
+#discounts h1,
+#payments h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card,
+.analytics-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: var(--text-color);
+    flex: 1;
+    margin: 0 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-duration);
+}
+
+.card:hover,
+.analytics-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Table Styles */
+
+.tab-content p {
+    margin-bottom: 10px;
+}
+
+.table-container {
+    margin-top: 20px;
+    background: var(--glass-bg);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.orders-table,
+.users-table,
+.ads-table,
+.discounts-table,
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-table th,
+.users-table th,
+.ads-table th,
+.discounts-table th,
+.payments-table th,
+.orders-table td,
+.users-table td,
+.ads-table td,
+.discounts-table td,
+.payments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orders-table th,
+.users-table th,
+.ads-table th,
+.discounts-table th,
+.payments-table th {
+    background-color: var(--sidebar-bg-color);
+    color: var(--text-color);
+}
+
+.orders-table tbody tr:hover,
+.users-table tr:hover,
+.ads-table tbody tr:hover,
+.discounts-table tbody tr:hover,
+.payments-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+}
+
+.btn:hover {
+    background-color: var(--secondary-text-color);
+}
+
+/* Discounts Tab Specific Styles */
+#discounts p {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Payments Tab Specific Styles */
+#payments p {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-btn {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color var(--transition-duration);
+}
+
+.pagination-btn:hover {
+    background-color: var(--secondary-text-color);
+}
+
+/* Fade-in and Fade-out Effects */
+.fade-in {
+    opacity: 1;
+    transition: opacity var(--transition-duration);
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity var(--transition-duration);
+}
+
+.menus-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card {
+    background: var(--glass-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-header h2 {
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+.items-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.items-table th,
+.items-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.items-table th {
+    background-color: var(--sidebar-bg-color);
+    color: var(--text-color);
+}
+
+.items-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.delete-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+}
+
+.delete-btn:hover {
+    background-color: var(--secondary-text-color);
+}
+
+.menu-title-container {
+    display: flex;
+    /* Use flexbox for alignment */
+    justify-content: space-between;
+    /* Space between title and button */
+    align-items: center;
+    /* Center vertically */
+}
+
+.menu-header h2 {
+    font-size: 1.5em;
+    /* Font size for the menu title */
+    color: var(--text-color);
+    /* Text color */
+    margin-right: 20px;
+    /* Space between title and button */
+}
+
+.delete-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+    font-size: 1em;
+    /* Adjust font size */
+    display: flex;
+    /* Flex for better alignment */
+    align-items: center;
+    /* Center the content */
+}
+
+.delete-btn:hover {
+    background-color: var(--secondary-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        /* Stacks sidebar and content on smaller screens */
+    }
+
+    .sidebar {
+        width: 100%;
+        /* Full width for sidebar */
+        height: auto;
+        /* Allows sidebar to adjust height */
+    }
+
+    .content {
+        padding: 15px;
+        /* Adjust padding for content */
+    }
+
+    .nav-item {
+        font-size: 0.9em;
+        /* Smaller font for navigation items */
+    }
+
+    .btn {
+        font-size: 0.9em;
+        /* Smaller buttons */
+    }
+}

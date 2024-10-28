@@ -1,0 +1,233 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables for easy customization */
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --primary-color: #e74c3c;
+    --hover-color: #b43227;
+    --secondary-color: #f2f2f2;
+    --background-color: #f8f8f8;
+    --text-color: #333;
+    --light-text-color: #777;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --container-max-width: 600px;
+}
+
+/* Body and Wrapper */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.checkout-wrapper {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 20px;
+    transition: transform var(--transition-speed);
+}
+
+.checkout-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.go-back-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color var(--transition-speed);
+    text-decoration: none;
+}
+
+.go-back-btn:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+.checkout-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Order Summary */
+.order-summary {
+    margin-bottom: 25px;
+}
+
+.summary-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* No Orders Message */
+.no-orders-message {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.no-orders-message h3 {
+    font-size: 1.5rem;
+    color: var(--light-text-color);
+    /* Use a lighter color */
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Order List */
+.order-list {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item.header {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Item Labels */
+.item-label,
+.price-label,
+.quantity-label {
+    flex: 1;
+    text-align: center;
+}
+
+.total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Discount Section */
+.discount-container {
+    margin-bottom: 20px;
+}
+
+.discount-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.discount-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.discount-input {
+    width: 75%;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+}
+
+.apply-discount-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.apply-discount-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.discount-message {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Checkout Button */
+.checkout-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.checkout-btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .checkout-container {
+        padding: 20px;
+    }
+
+    .discount-input-container {
+        flex-direction: column;
+    }
+
+    .discount-input {
+        margin-bottom: 10px;
+    }
+}

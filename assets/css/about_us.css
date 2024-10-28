@@ -1,0 +1,147 @@
+/* CSS Variables for easy customization */
+:root {
+    --primary-color: #2a9d8f;
+    --secondary-color: #264653;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --highlight-color: #e9c46a;
+    --font-size-large: 1.8rem;
+    --font-size-medium: 1.2rem;
+    --font-size-small: 1rem;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* General Layout */
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: var(--font-size-large);
+    margin-bottom: 1rem;
+}
+
+section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+}
+
+/* About Section */
+.about-section .intro-text {
+    font-size: var(--font-size-medium);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.owner-image {
+    max-width: 200px;
+    border-radius: 50%;
+    transition: transform var(--transition-speed);
+}
+
+.owner-image:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    max-width: 500px;
+    font-size: var(--font-size-small);
+}
+
+/* Story Section */
+.story-text {
+    font-size: var(--font-size-medium);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Team Section */
+.team-section .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.team-card {
+    background-color: var(--highlight-color);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.team-card:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.team-card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials-section .testimonials-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.testimonial-card {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: transform var(--transition-speed), opacity var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 0.8;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-card img {
+    max-width: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

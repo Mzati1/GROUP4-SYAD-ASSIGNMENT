@@ -1,0 +1,261 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables for Customization */
+:root {
+    --primary-color: #d23f31;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --card-bg: #fff;
+    --input-bg: #f9f9f9;
+    --border-radius: 8px;
+    --max-width: 1200px;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+}
+
+/* Profile Background */
+.profile-background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.user-details {
+    flex-grow: 1;
+}
+
+.user-name {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.user-email,
+.user-residence {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Button Styling */
+button {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #b43227;
+    transform: scale(1.05);
+}
+
+/* Edit Profile Form */
+.edit-profile-form {
+    display: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--border-radius);
+}
+
+.edit-profile-form h3 {
+    margin-bottom: 15px;
+}
+
+.edit-profile-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: var(--text-color);
+}
+
+.edit-profile-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: black;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 5px;
+}
+
+.tab:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Tab Pane */
+.tab-pane {
+    display: none;
+}
+
+/* Active Tab */
+.tab-pane.active {
+    display: block;
+}
+
+/* Orders List, Payments List, Discounts List */
+.orders-list,
+.payments-list,
+.discounts-list {
+    margin-top: 20px;
+}
+
+/* Order, Payment, Discount Styles */
+.order,
+.payment,
+.discount {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Order Header */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-status {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+}
+
+/* Order Items List */
+.order-items {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.order-items li {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* No Orders/Payments/Discounts Message */
+.no-orders,
+.no-payments,
+.no-discounts {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Payment Details */
+.payment-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .order,
+    .payment,
+    .discount {
+        padding: 10px;
+    }
+
+    .order h4 {
+        font-size: 1.3rem;
+    }
+
+    .order-items li {
+        font-size: 0.9rem;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .edit-profile-form label,
+    .edit-profile-form input {
+        font-size: 0.9rem;
+    }
+}
