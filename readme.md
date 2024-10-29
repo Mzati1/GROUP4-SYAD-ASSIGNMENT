@@ -64,11 +64,11 @@ soReal is a web application designed for a restaurant, allowing users to browse,
       
    Alternatively, create a new user account by signing up with your own credentials.
 
+## Live Website
+
+You can access the live website at: [http://soreal.rf.gd](http://soreal.rf.gd)
+
 ## Third-Party Services Used
 
 - **Font Awesome**: Provides icons via [Font Awesome](https://fontawesome.com/).
 - **PayChangu Payment Gateway**: Manages payment processing through [PayChangu](https://paychangu.com/).
-
----
-
-
