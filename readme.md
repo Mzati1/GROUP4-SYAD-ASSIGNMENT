@@ -71,4 +71,4 @@ soReal is a web application designed for a restaurant, allowing users to browse,
 
 ---
 
-This guide provides a streamlined approach for setting up and running the soReal application. Follow the steps carefully for optimal configuration.
+
